@@ -5,9 +5,9 @@
 				<ControlTemplate TargetType="local:FloatLabelTextBox">
 					<Grid Background="Transparent">
 						<Grid.RowDefinitions>
-							<RowDefinition Height="18"/>
+							<RowDefinition Height="28"/>
 							<RowDefinition Height="Auto"/>
-							<RowDefinition Height="12"/>
+							<RowDefinition Height="6"/>
 						</Grid.RowDefinitions>
 						<VisualStateManager.VisualStateGroups>
 							<VisualStateGroup x:Name="CommonStates">
@@ -73,7 +73,7 @@
 								</VisualState>
 							</VisualStateGroup>
 						</VisualStateManager.VisualStateGroups>
-						<Grid x:Name="FloatLabels" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="14,0,0,0" RenderTransformOrigin="0.5,0.5">
+						<Grid x:Name="FloatLabels" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="14,0,0,0" RenderTransformOrigin="0.5,0.5">
 							<Grid.RenderTransform>
 								<CompositeTransform/>
 							</Grid.RenderTransform>

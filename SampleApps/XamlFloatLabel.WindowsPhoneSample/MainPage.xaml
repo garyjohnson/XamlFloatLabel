@@ -13,6 +13,9 @@
     Foreground="{StaticResource PhoneForegroundBrush}"
     SupportedOrientations="Portrait" Orientation="Portrait"
     shell:SystemTray.IsVisible="True">
+	<phone:PhoneApplicationPage.Resources>
+		<Color x:Key="FormBorderBrush">#FFC5C5C5</Color>
+	</phone:PhoneApplicationPage.Resources>
 
     <!--LayoutRoot is the root grid where all page content is placed-->
 	<Grid x:Name="LayoutRoot" Background="Transparent">
@@ -49,8 +52,8 @@
 		<!--<Image Source="/Assets/AlignmentGrid.png" VerticalAlignment="Top" Height="800" Width="480" Margin="0,-32,0,0" Grid.Row="0" Grid.RowSpan="2" IsHitTestVisible="False" />-->
     <!--TitlePanel contains the name of the application and page title-->
 		<StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
-			<TextBlock Text="MY APPLICATION" Style="{StaticResource PhoneTextNormalStyle}" Margin="12,0"/>
-			<TextBlock Text="page name" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+			<TextBlock Text="FLOATLABELTEXTBOX" Style="{StaticResource PhoneTextNormalStyle}" Margin="12,0"/>
+			<TextBlock Text="Example" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
 		</StackPanel>
 
         <!--ContentPanel - place additional content here-->
@@ -61,9 +64,32 @@
 			</Grid.ColumnDefinitions>
 
 			<StackPanel Grid.ColumnSpan="2">
-				<XamlFloatLabel:FloatLabelTextBox TextWrapping="Wrap" VerticalAlignment="Top" Label="First Name"/>
-				<XamlFloatLabel:FloatLabelTextBox TextWrapping="Wrap" VerticalAlignment="Top" Label="Last Name"/>
-				<XamlFloatLabel:FloatLabelTextBox TextWrapping="Wrap" VerticalAlignment="Top" Label="Address"/>
+				<Grid>
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition/>
+						<ColumnDefinition Width="3"/>
+						<ColumnDefinition/>
+					</Grid.ColumnDefinitions>
+					<XamlFloatLabel:FloatLabelTextBox TextWrapping="Wrap" VerticalAlignment="Top" Label="First Name" Margin="0" InputScope="PersonalGivenName"/>
+					<Border BorderThickness="1,0,0,0" Margin="0" Grid.Column="1">
+						<Border.BorderBrush>
+							<SolidColorBrush Color="{StaticResource FormBorderBrush}"/>
+						</Border.BorderBrush>
+					</Border>
+					<XamlFloatLabel:FloatLabelTextBox TextWrapping="Wrap" VerticalAlignment="Top" Label="Last Name" Margin="0" Grid.Column="2" InputScope="PersonalSurname"/>
+				</Grid>
+				<Border BorderThickness="0,1,0,0" VerticalAlignment="Top" Margin="0,0,-12,0">
+					<Border.BorderBrush>
+						<SolidColorBrush Color="{StaticResource FormBorderBrush}"/>
+					</Border.BorderBrush>
+				</Border>
+				<XamlFloatLabel:FloatLabelTextBox TextWrapping="Wrap" VerticalAlignment="Top" Label="Street Address" InputScope="AddressStreet"/>
+				<Border BorderThickness="0,1,0,0" VerticalAlignment="Top" Margin="0,0,-12,0">
+					<Border.BorderBrush>
+						<SolidColorBrush Color="{StaticResource FormBorderBrush}"/>
+					</Border.BorderBrush>
+				</Border>
+				<XamlFloatLabel:FloatLabelTextBox TextWrapping="Wrap" VerticalAlignment="Top" Label="Zip Code" InputScope="PostalCode"/>
 			</StackPanel>
 
 		</Grid>
